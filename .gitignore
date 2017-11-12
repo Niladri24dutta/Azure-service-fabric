@@ -3,3 +3,4 @@
 ################################################################################
 
 /packages/Microsoft.VisualStudio.Azure.Fabric.MSBuild.1.6.2/build
+/.vs/ServiceFabricActor/v15/Server/sqlite3
