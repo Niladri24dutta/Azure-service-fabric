@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETFramework,Version=v4.6.2/win7-x64",
-    "signature": "70bb38a8a8e150e93ad54e59f656533d45fc21f5"
+    "signature": "55e86108e4b9742af53619d9039cfe3164db3385"
   },
   "compilationOptions": {
     "defines": [
@@ -25,10 +25,17 @@
         "dependencies": {
           "Microsoft.AspNetCore": "2.0.0",
           "Microsoft.AspNetCore.Mvc": "2.0.0",
+          "Microsoft.AspNetCore.StaticFiles": "2.0.0",
+          "Microsoft.EntityFrameworkCore.Design": "2.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "2.0.0",
+          "Microsoft.EntityFrameworkCore.Tools": "2.0.0",
           "Microsoft.ServiceFabric": "6.0.219",
+          "Microsoft.ServiceFabric.Actors": "2.8.219",
           "Microsoft.ServiceFabric.AspNetCore.Kestrel": "2.8.219",
           "Microsoft.ServiceFabric.Data": "2.8.219",
           "Microsoft.ServiceFabric.Services": "2.8.219",
+          "Microsoft.VisualStudio.Web.BrowserLink": "2.0.0",
+          "Student.Interfaces": "1.0.0",
           "Microsoft.CSharp.Reference": "4.0.0.0",
           "mscorlib": "4.0.0.0",
           "System.ComponentModel.Composition": "4.0.0.0",
@@ -95,7 +102,7 @@
           "System.Linq.Reference": "4.1.2.0",
           "System.Linq.Expressions.Reference": "4.1.2.0",
           "System.Linq.Parallel": "4.0.1.0",
-          "System.Linq.Queryable": "4.0.1.0",
+          "System.Linq.Queryable.Reference": "4.0.1.0",
           "System.Net.Http": "4.2.0.0",
           "System.Net.NameResolution": "4.0.2.0",
           "System.Net.NetworkInformation": "4.1.2.0",
@@ -107,9 +114,9 @@
           "System.Net.WebHeaderCollection": "4.0.1.0",
           "System.Net.WebSockets.Client": "4.0.2.0",
           "System.Net.WebSockets": "4.0.2.0",
-          "System.ObjectModel": "4.0.11.0",
+          "System.ObjectModel.Reference": "4.0.11.0",
           "System.Reflection.Reference": "4.1.2.0",
-          "System.Reflection.Extensions": "4.0.1.0",
+          "System.Reflection.Extensions.Reference": "4.0.1.0",
           "System.Reflection.Primitives": "4.0.1.0",
           "System.Resources.Reader": "4.0.2.0",
           "System.Resources.ResourceManager.Reference": "4.0.1.0",
@@ -485,7 +492,7 @@
           "System.Linq.Parallel.dll": {}
         }
       },
-      "System.Linq.Queryable/4.0.1.0": {
+      "System.Linq.Queryable.Reference/4.0.1.0": {
         "compile": {
           "System.Linq.Queryable.dll": {}
         }
@@ -545,7 +552,7 @@
           "System.Net.WebSockets.dll": {}
         }
       },
-      "System.ObjectModel/4.0.11.0": {
+      "System.ObjectModel.Reference/4.0.11.0": {
         "compile": {
           "System.ObjectModel.dll": {}
         }
@@ -555,7 +562,7 @@
           "System.Reflection.dll": {}
         }
       },
-      "System.Reflection.Extensions/4.0.1.0": {
+      "System.Reflection.Extensions.Reference/4.0.1.0": {
         "compile": {
           "System.Reflection.Extensions.dll": {}
         }
@@ -1287,6 +1294,18 @@
           "lib/netstandard2.0/Microsoft.AspNetCore.Server.Kestrel.Transport.Libuv.dll": {}
         }
       },
+      "Microsoft.AspNetCore.StaticFiles/2.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Hosting.Abstractions": "2.0.0",
+          "Microsoft.AspNetCore.Http.Extensions": "2.0.0",
+          "Microsoft.Extensions.FileProviders.Abstractions": "2.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "2.0.0",
+          "Microsoft.Extensions.WebEncoders": "2.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.StaticFiles.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.WebUtilities/2.0.0": {
         "dependencies": {
           "Microsoft.Net.Http.Headers": "2.0.0",
@@ -1366,6 +1385,53 @@
       "Microsoft.DotNet.PlatformAbstractions/2.0.0": {
         "compile": {
           "lib/net45/Microsoft.DotNet.PlatformAbstractions.dll": {}
+        }
+      },
+      "Microsoft.EntityFrameworkCore/2.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Caching.Memory": "2.0.0",
+          "Microsoft.Extensions.DependencyInjection": "2.0.0",
+          "Microsoft.Extensions.Logging": "2.0.0",
+          "Remotion.Linq": "2.1.1",
+          "System.Collections.Immutable": "1.4.0",
+          "System.ComponentModel.Annotations": "4.4.0",
+          "System.Diagnostics.DiagnosticSource": "4.4.1",
+          "System.Interactive.Async": "3.1.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.EntityFrameworkCore.dll": {}
+        }
+      },
+      "Microsoft.EntityFrameworkCore.Design/2.0.0": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Relational": "2.0.0"
+        },
+        "compile": {
+          "lib/net461/Microsoft.EntityFrameworkCore.Design.dll": {}
+        }
+      },
+      "Microsoft.EntityFrameworkCore.Relational/2.0.0": {
+        "dependencies": {
+          "Microsoft.CSharp": "4.4.0",
+          "Microsoft.EntityFrameworkCore": "2.0.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "2.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Relational.dll": {}
+        }
+      },
+      "Microsoft.EntityFrameworkCore.SqlServer/2.0.0": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Relational": "2.0.0",
+          "System.Data.SqlClient": "4.4.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.EntityFrameworkCore.SqlServer.dll": {}
+        }
+      },
+      "Microsoft.EntityFrameworkCore.Tools/2.0.0": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Design": "2.0.0"
         }
       },
       "Microsoft.Extensions.Caching.Abstractions/2.0.0": {
@@ -1631,6 +1697,15 @@
           "lib/net45/System.Fabric.dll": {}
         }
       },
+      "Microsoft.ServiceFabric.Actors/2.8.219": {
+        "dependencies": {
+          "Microsoft.ServiceFabric.Diagnostics.Internal": "2.8.219",
+          "Microsoft.ServiceFabric.Services.Remoting": "2.8.219"
+        },
+        "compile": {
+          "lib/net45/Microsoft.ServiceFabric.Actors.dll": {}
+        }
+      },
       "Microsoft.ServiceFabric.AspNetCore.Abstractions/2.8.219": {
         "dependencies": {
           "Microsoft.AspNetCore.Hosting": "2.0.0",
@@ -1672,6 +1747,15 @@
           "lib/net45/Microsoft.ServiceFabric.Diagnostics.dll": {}
         }
       },
+      "Microsoft.ServiceFabric.FabricTransport.Internal/2.8.219": {
+        "dependencies": {
+          "Microsoft.ServiceFabric": "6.0.219"
+        },
+        "compile": {
+          "lib/net45/Microsoft.ServiceFabric.FabricTransport.V2.dll": {},
+          "lib/net45/Microsoft.ServiceFabric.FabricTransport.dll": {}
+        }
+      },
       "Microsoft.ServiceFabric.Services/2.8.219": {
         "dependencies": {
           "Microsoft.ServiceFabric.Data": "2.8.219",
@@ -1679,6 +1763,27 @@
         },
         "compile": {
           "lib/net45/Microsoft.ServiceFabric.Services.dll": {}
+        }
+      },
+      "Microsoft.ServiceFabric.Services.Remoting/2.8.219": {
+        "dependencies": {
+          "Microsoft.ServiceFabric.Diagnostics.Internal": "2.8.219",
+          "Microsoft.ServiceFabric.FabricTransport.Internal": "2.8.219",
+          "Microsoft.ServiceFabric.Services": "2.8.219"
+        },
+        "compile": {
+          "lib/net45/Microsoft.ServiceFabric.Services.Remoting.dll": {}
+        }
+      },
+      "Microsoft.VisualStudio.Web.BrowserLink/2.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Hosting.Abstractions": "2.0.0",
+          "Microsoft.AspNetCore.Http.Abstractions": "2.0.0",
+          "Microsoft.AspNetCore.Http.Extensions": "2.0.0",
+          "Microsoft.Extensions.FileProviders.Physical": "2.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.VisualStudio.Web.BrowserLink.dll": {}
         }
       },
       "Microsoft.Win32.Registry/4.4.0": {
@@ -1708,6 +1813,24 @@
           "lib/net45/Newtonsoft.Json.Bson.dll": {}
         }
       },
+      "Remotion.Linq/2.1.1": {
+        "dependencies": {
+          "System.Collections": "4.3.0",
+          "System.Diagnostics.Debug": "4.3.0",
+          "System.Linq": "4.3.0",
+          "System.Linq.Expressions": "4.3.0",
+          "System.Linq.Queryable": "4.0.1",
+          "System.ObjectModel": "4.0.12",
+          "System.Reflection": "4.3.0",
+          "System.Reflection.Extensions": "4.0.1",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Threading": "4.3.0"
+        },
+        "compile": {
+          "lib/net45/Remotion.Linq.dll": {}
+        }
+      },
       "System.AppContext/4.3.0": {},
       "System.Buffers/4.4.0": {
         "compile": {
@@ -1727,6 +1850,11 @@
         }
       },
       "System.Console/4.3.0": {},
+      "System.Data.SqlClient/4.4.0": {
+        "compile": {
+          "ref/net461/System.Data.SqlClient.dll": {}
+        }
+      },
       "System.Diagnostics.Debug/4.3.0": {},
       "System.Diagnostics.DiagnosticSource/4.4.1": {
         "compile": {
@@ -1738,6 +1866,11 @@
       "System.Diagnostics.Tools/4.3.0": {},
       "System.Dynamic.Runtime/4.3.0": {},
       "System.Globalization/4.3.0": {},
+      "System.Interactive.Async/3.1.1": {
+        "compile": {
+          "lib/net46/System.Interactive.Async.dll": {}
+        }
+      },
       "System.IO.Compression/4.3.0": {},
       "System.IO.FileSystem/4.3.0": {
         "dependencies": {
@@ -1747,12 +1880,15 @@
       "System.IO.FileSystem.Primitives/4.3.0": {},
       "System.Linq/4.3.0": {},
       "System.Linq.Expressions/4.3.0": {},
+      "System.Linq.Queryable/4.0.1": {},
       "System.Numerics.Vectors/4.4.0": {
         "compile": {
           "ref/net46/System.Numerics.Vectors.dll": {}
         }
       },
+      "System.ObjectModel/4.0.12": {},
       "System.Reflection/4.3.0": {},
+      "System.Reflection.Extensions/4.0.1": {},
       "System.Reflection.Metadata/1.5.0": {
         "dependencies": {
           "System.Collections.Immutable": "1.4.0"
@@ -1832,6 +1968,11 @@
         "dependencies": {
           "System.Xml.XPath": "4.3.0"
         }
+      },
+      "Student.Interfaces/1.0.0": {
+        "compile": {
+          "Student.Interfaces.dll": {}
+        }
       }
     },
     ".NETFramework,Version=v4.6.2/win7-x64": {
@@ -1839,10 +1980,17 @@
         "dependencies": {
           "Microsoft.AspNetCore": "2.0.0",
           "Microsoft.AspNetCore.Mvc": "2.0.0",
+          "Microsoft.AspNetCore.StaticFiles": "2.0.0",
+          "Microsoft.EntityFrameworkCore.Design": "2.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "2.0.0",
+          "Microsoft.EntityFrameworkCore.Tools": "2.0.0",
           "Microsoft.ServiceFabric": "6.0.219",
+          "Microsoft.ServiceFabric.Actors": "2.8.219",
           "Microsoft.ServiceFabric.AspNetCore.Kestrel": "2.8.219",
           "Microsoft.ServiceFabric.Data": "2.8.219",
           "Microsoft.ServiceFabric.Services": "2.8.219",
+          "Microsoft.VisualStudio.Web.BrowserLink": "2.0.0",
+          "Student.Interfaces": "1.0.0",
           "Microsoft.CSharp.Reference": "4.0.0.0",
           "mscorlib": "4.0.0.0",
           "System.ComponentModel.Composition": "4.0.0.0",
@@ -1909,7 +2057,7 @@
           "System.Linq.Reference": "4.1.2.0",
           "System.Linq.Expressions.Reference": "4.1.2.0",
           "System.Linq.Parallel": "4.0.1.0",
-          "System.Linq.Queryable": "4.0.1.0",
+          "System.Linq.Queryable.Reference": "4.0.1.0",
           "System.Net.Http": "4.2.0.0",
           "System.Net.NameResolution": "4.0.2.0",
           "System.Net.NetworkInformation": "4.1.2.0",
@@ -1921,9 +2069,9 @@
           "System.Net.WebHeaderCollection": "4.0.1.0",
           "System.Net.WebSockets.Client": "4.0.2.0",
           "System.Net.WebSockets": "4.0.2.0",
-          "System.ObjectModel": "4.0.11.0",
+          "System.ObjectModel.Reference": "4.0.11.0",
           "System.Reflection.Reference": "4.1.2.0",
-          "System.Reflection.Extensions": "4.0.1.0",
+          "System.Reflection.Extensions.Reference": "4.0.1.0",
           "System.Reflection.Primitives": "4.0.1.0",
           "System.Resources.Reader": "4.0.2.0",
           "System.Resources.ResourceManager.Reference": "4.0.1.0",
@@ -2499,6 +2647,18 @@
           "lib/netstandard2.0/Microsoft.AspNetCore.Server.Kestrel.Transport.Libuv.dll": {}
         }
       },
+      "Microsoft.AspNetCore.StaticFiles/2.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Hosting.Abstractions": "2.0.0",
+          "Microsoft.AspNetCore.Http.Extensions": "2.0.0",
+          "Microsoft.Extensions.FileProviders.Abstractions": "2.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "2.0.0",
+          "Microsoft.Extensions.WebEncoders": "2.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.StaticFiles.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.WebUtilities/2.0.0": {
         "dependencies": {
           "Microsoft.Net.Http.Headers": "2.0.0",
@@ -2578,6 +2738,53 @@
       "Microsoft.DotNet.PlatformAbstractions/2.0.0": {
         "runtime": {
           "lib/net45/Microsoft.DotNet.PlatformAbstractions.dll": {}
+        }
+      },
+      "Microsoft.EntityFrameworkCore/2.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Caching.Memory": "2.0.0",
+          "Microsoft.Extensions.DependencyInjection": "2.0.0",
+          "Microsoft.Extensions.Logging": "2.0.0",
+          "Remotion.Linq": "2.1.1",
+          "System.Collections.Immutable": "1.4.0",
+          "System.ComponentModel.Annotations": "4.4.0",
+          "System.Diagnostics.DiagnosticSource": "4.4.1",
+          "System.Interactive.Async": "3.1.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.EntityFrameworkCore.dll": {}
+        }
+      },
+      "Microsoft.EntityFrameworkCore.Design/2.0.0": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Relational": "2.0.0"
+        },
+        "runtime": {
+          "lib/net461/Microsoft.EntityFrameworkCore.Design.dll": {}
+        }
+      },
+      "Microsoft.EntityFrameworkCore.Relational/2.0.0": {
+        "dependencies": {
+          "Microsoft.CSharp": "4.4.0",
+          "Microsoft.EntityFrameworkCore": "2.0.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "2.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Relational.dll": {}
+        }
+      },
+      "Microsoft.EntityFrameworkCore.SqlServer/2.0.0": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Relational": "2.0.0",
+          "System.Data.SqlClient": "4.4.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.EntityFrameworkCore.SqlServer.dll": {}
+        }
+      },
+      "Microsoft.EntityFrameworkCore.Tools/2.0.0": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Design": "2.0.0"
         }
       },
       "Microsoft.Extensions.Caching.Abstractions/2.0.0": {
@@ -2843,6 +3050,15 @@
           "lib/net45/System.Fabric.dll": {}
         }
       },
+      "Microsoft.ServiceFabric.Actors/2.8.219": {
+        "dependencies": {
+          "Microsoft.ServiceFabric.Diagnostics.Internal": "2.8.219",
+          "Microsoft.ServiceFabric.Services.Remoting": "2.8.219"
+        },
+        "runtime": {
+          "lib/net45/Microsoft.ServiceFabric.Actors.dll": {}
+        }
+      },
       "Microsoft.ServiceFabric.AspNetCore.Abstractions/2.8.219": {
         "dependencies": {
           "Microsoft.AspNetCore.Hosting": "2.0.0",
@@ -2884,6 +3100,15 @@
           "lib/net45/Microsoft.ServiceFabric.Diagnostics.dll": {}
         }
       },
+      "Microsoft.ServiceFabric.FabricTransport.Internal/2.8.219": {
+        "dependencies": {
+          "Microsoft.ServiceFabric": "6.0.219"
+        },
+        "runtime": {
+          "lib/net45/Microsoft.ServiceFabric.FabricTransport.V2.dll": {},
+          "lib/net45/Microsoft.ServiceFabric.FabricTransport.dll": {}
+        }
+      },
       "Microsoft.ServiceFabric.Services/2.8.219": {
         "dependencies": {
           "Microsoft.ServiceFabric.Data": "2.8.219",
@@ -2891,6 +3116,27 @@
         },
         "runtime": {
           "lib/net45/Microsoft.ServiceFabric.Services.dll": {}
+        }
+      },
+      "Microsoft.ServiceFabric.Services.Remoting/2.8.219": {
+        "dependencies": {
+          "Microsoft.ServiceFabric.Diagnostics.Internal": "2.8.219",
+          "Microsoft.ServiceFabric.FabricTransport.Internal": "2.8.219",
+          "Microsoft.ServiceFabric.Services": "2.8.219"
+        },
+        "runtime": {
+          "lib/net45/Microsoft.ServiceFabric.Services.Remoting.dll": {}
+        }
+      },
+      "Microsoft.VisualStudio.Web.BrowserLink/2.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Hosting.Abstractions": "2.0.0",
+          "Microsoft.AspNetCore.Http.Abstractions": "2.0.0",
+          "Microsoft.AspNetCore.Http.Extensions": "2.0.0",
+          "Microsoft.Extensions.FileProviders.Physical": "2.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.VisualStudio.Web.BrowserLink.dll": {}
         }
       },
       "Microsoft.Win32.Registry/4.4.0": {
@@ -2920,6 +3166,24 @@
           "lib/net45/Newtonsoft.Json.Bson.dll": {}
         }
       },
+      "Remotion.Linq/2.1.1": {
+        "dependencies": {
+          "System.Collections": "4.3.0",
+          "System.Diagnostics.Debug": "4.3.0",
+          "System.Linq": "4.3.0",
+          "System.Linq.Expressions": "4.3.0",
+          "System.Linq.Queryable": "4.0.1",
+          "System.ObjectModel": "4.0.12",
+          "System.Reflection": "4.3.0",
+          "System.Reflection.Extensions": "4.0.1",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Threading": "4.3.0"
+        },
+        "runtime": {
+          "lib/net45/Remotion.Linq.dll": {}
+        }
+      },
       "System.AppContext/4.3.0": {},
       "System.Buffers/4.4.0": {
         "runtime": {
@@ -2939,6 +3203,11 @@
         }
       },
       "System.Console/4.3.0": {},
+      "System.Data.SqlClient/4.4.0": {
+        "runtime": {
+          "runtimes/win/lib/net461/System.Data.SqlClient.dll": {}
+        }
+      },
       "System.Diagnostics.Debug/4.3.0": {},
       "System.Diagnostics.DiagnosticSource/4.4.1": {
         "runtime": {
@@ -2950,6 +3219,11 @@
       "System.Diagnostics.Tools/4.3.0": {},
       "System.Dynamic.Runtime/4.3.0": {},
       "System.Globalization/4.3.0": {},
+      "System.Interactive.Async/3.1.1": {
+        "runtime": {
+          "lib/net46/System.Interactive.Async.dll": {}
+        }
+      },
       "System.IO.Compression/4.3.0": {},
       "System.IO.FileSystem/4.3.0": {
         "dependencies": {
@@ -2959,12 +3233,15 @@
       "System.IO.FileSystem.Primitives/4.3.0": {},
       "System.Linq/4.3.0": {},
       "System.Linq.Expressions/4.3.0": {},
+      "System.Linq.Queryable/4.0.1": {},
       "System.Numerics.Vectors/4.4.0": {
         "runtime": {
           "lib/net46/System.Numerics.Vectors.dll": {}
         }
       },
+      "System.ObjectModel/4.0.12": {},
       "System.Reflection/4.3.0": {},
+      "System.Reflection.Extensions/4.0.1": {},
       "System.Reflection.Metadata/1.5.0": {
         "dependencies": {
           "System.Collections.Immutable": "1.4.0"
@@ -3047,6 +3324,11 @@
       "System.Xml.XPath.XDocument/4.3.0": {
         "dependencies": {
           "System.Xml.XPath": "4.3.0"
+        }
+      },
+      "Student.Interfaces/1.0.0": {
+        "runtime": {
+          "Student.Interfaces.dll": {}
         }
       }
     }
@@ -3400,6 +3682,13 @@
       "path": "microsoft.aspnetcore.server.kestrel.transport.libuv/2.0.0",
       "hashPath": "microsoft.aspnetcore.server.kestrel.transport.libuv.2.0.0.nupkg.sha512"
     },
+    "Microsoft.AspNetCore.StaticFiles/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HBMJQ1WPdHO0thltwi7agvfis3c1Kd5HFQDgyy0nV3X4mJvhVGUnymT0+QQU+GGNK9FG/uEQNE3YDSrrBamP7w==",
+      "path": "microsoft.aspnetcore.staticfiles/2.0.0",
+      "hashPath": "microsoft.aspnetcore.staticfiles.2.0.0.nupkg.sha512"
+    },
     "Microsoft.AspNetCore.WebUtilities/2.0.0": {
       "type": "package",
       "serviceable": true,
@@ -3448,6 +3737,41 @@
       "sha512": "sha512-l5tDOSom+qpx4pDEoIcqMHnGC7jJ4Uq1DiJ6St/bn0rb5xIh/q4u7OQTIcE1k+1o7E0lYnJA4ZluzS6HGFr4zw==",
       "path": "microsoft.dotnet.platformabstractions/2.0.0",
       "hashPath": "microsoft.dotnet.platformabstractions.2.0.0.nupkg.sha512"
+    },
+    "Microsoft.EntityFrameworkCore/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-wmgBEpjoxd6ElVh13dlzmsl/9BtE5lky97vutJxLwFopP0IuWAyclCC2WHoXq4bYRmtzYSpmA4Q/kNugynswSA==",
+      "path": "microsoft.entityframeworkcore/2.0.0",
+      "hashPath": "microsoft.entityframeworkcore.2.0.0.nupkg.sha512"
+    },
+    "Microsoft.EntityFrameworkCore.Design/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-v8e4OwmK+BIm7jINmGJaQz1+r6BiFl+bGJNVUF4JQZ9H40keeTIHEgKDxdEr+24EdllfLLKTisEziq1H089TYg==",
+      "path": "microsoft.entityframeworkcore.design/2.0.0",
+      "hashPath": "microsoft.entityframeworkcore.design.2.0.0.nupkg.sha512"
+    },
+    "Microsoft.EntityFrameworkCore.Relational/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-/Ay6EZXUZuPLCKdbLW59AuwCm+hqDgIxBzDTHIx6uEIvDFfC0Bs99CRL8Lgi1NgU9NOhFDmeRgE1goViru+Zgg==",
+      "path": "microsoft.entityframeworkcore.relational/2.0.0",
+      "hashPath": "microsoft.entityframeworkcore.relational.2.0.0.nupkg.sha512"
+    },
+    "Microsoft.EntityFrameworkCore.SqlServer/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-mr+S07kAKXsdu9207w1ek4O1/0+y5925kMYy7gCqu15QpvfVXOLdAR0b9RQfBxmtAJPrYx6/KtfvAg70jm5zUA==",
+      "path": "microsoft.entityframeworkcore.sqlserver/2.0.0",
+      "hashPath": "microsoft.entityframeworkcore.sqlserver.2.0.0.nupkg.sha512"
+    },
+    "Microsoft.EntityFrameworkCore.Tools/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ILVI7sbnD0Pgf6B90AL3RiRdq+XRXEG4VnvuD75Fluv6p5PbYfU2tQP2VlL0oAFCVhihSgSWIQHtDjUFEE0+nw==",
+      "path": "microsoft.entityframeworkcore.tools/2.0.0",
+      "hashPath": "microsoft.entityframeworkcore.tools.2.0.0.nupkg.sha512"
     },
     "Microsoft.Extensions.Caching.Abstractions/2.0.0": {
       "type": "package",
@@ -3680,6 +4004,13 @@
       "path": "microsoft.servicefabric/6.0.219",
       "hashPath": "microsoft.servicefabric.6.0.219.nupkg.sha512"
     },
+    "Microsoft.ServiceFabric.Actors/2.8.219": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-OiTTutIg/sTJ627H1Rgu4pk7DzMn9FjfLb4ygISY72smgC6oMDLl7XsOt/KDZ7qB8/gjgqwFEbKJbfMpKdpQLg==",
+      "path": "microsoft.servicefabric.actors/2.8.219",
+      "hashPath": "microsoft.servicefabric.actors.2.8.219.nupkg.sha512"
+    },
     "Microsoft.ServiceFabric.AspNetCore.Abstractions/2.8.219": {
       "type": "package",
       "serviceable": true,
@@ -3708,12 +4039,33 @@
       "path": "microsoft.servicefabric.diagnostics.internal/2.8.219",
       "hashPath": "microsoft.servicefabric.diagnostics.internal.2.8.219.nupkg.sha512"
     },
+    "Microsoft.ServiceFabric.FabricTransport.Internal/2.8.219": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-gz9Z52CAYi580VhMac2HbCgF6j+ZjUGm3NCqLAb1MikLkf57rxQPp9qoPw6V+laCWEadn9wQP++penW//6q4WA==",
+      "path": "microsoft.servicefabric.fabrictransport.internal/2.8.219",
+      "hashPath": "microsoft.servicefabric.fabrictransport.internal.2.8.219.nupkg.sha512"
+    },
     "Microsoft.ServiceFabric.Services/2.8.219": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-5f4DqaQWARSMtctHxZgE17Zqyt146iciKI1fot2aJaELRW7sKDT1mMbz9h650LscP6VTpW54Xvp2Ry8/rzl2fw==",
       "path": "microsoft.servicefabric.services/2.8.219",
       "hashPath": "microsoft.servicefabric.services.2.8.219.nupkg.sha512"
+    },
+    "Microsoft.ServiceFabric.Services.Remoting/2.8.219": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-YzgBCjA+HLP/5cf5BRfQH16ly+xzuTjoDG0Cm0HBxzY5TNy6DJCKheVTbbjauBhCsW7Qg6Qm5pWgpTAbb1hg5A==",
+      "path": "microsoft.servicefabric.services.remoting/2.8.219",
+      "hashPath": "microsoft.servicefabric.services.remoting.2.8.219.nupkg.sha512"
+    },
+    "Microsoft.VisualStudio.Web.BrowserLink/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-+iLi1BBW/52xtKPYITk1jJSD0sJCHYy5dbOjSQZiZjnqPGjuo2LAfhz//rYAzYbyKq+kH1CO763ViGcdsMvFbA==",
+      "path": "microsoft.visualstudio.web.browserlink/2.0.0",
+      "hashPath": "microsoft.visualstudio.web.browserlink.2.0.0.nupkg.sha512"
     },
     "Microsoft.Win32.Registry/4.4.0": {
       "type": "package",
@@ -3742,6 +4094,13 @@
       "sha512": "sha512-5PYT/IqQ+UK31AmZiSS102R6EsTo+LGTSI8bp7WAUqDKaF4wHXD8U9u4WxTI1vc64tYi++8p3dk3WWNqPFgldw==",
       "path": "newtonsoft.json.bson/1.0.1",
       "hashPath": "newtonsoft.json.bson.1.0.1.nupkg.sha512"
+    },
+    "Remotion.Linq/2.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-IJn0BqkvwEDpP+2qjvci7n4/a9f7DhKESLWb2/uG4xQh3rTkGTBUz69bI4IivCoKkTFAqjXxYDZw2K/npohjsw==",
+      "path": "remotion.linq/2.1.1",
+      "hashPath": "remotion.linq.2.1.1.nupkg.sha512"
     },
     "System.AppContext/4.3.0": {
       "type": "package",
@@ -3792,6 +4151,13 @@
       "path": "system.console/4.3.0",
       "hashPath": "system.console.4.3.0.nupkg.sha512"
     },
+    "System.Data.SqlClient/4.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-fxb9ghn1k1Ua7FFdlvtiBOD4/PsQvD/fk2KnhS+FK7VC6OggEx6P+lP1P0+KMb5V2dqS1+FbR7HCenoqzJMNIA==",
+      "path": "system.data.sqlclient/4.4.0",
+      "hashPath": "system.data.sqlclient.4.4.0.nupkg.sha512"
+    },
     "System.Diagnostics.Debug/4.3.0": {
       "type": "package",
       "serviceable": true,
@@ -3841,6 +4207,13 @@
       "path": "system.globalization/4.3.0",
       "hashPath": "system.globalization.4.3.0.nupkg.sha512"
     },
+    "System.Interactive.Async/3.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-hZccYiIE5RS1/J9Tb/BNtosAGVggdlsJm4Ojdu+gDV0p4AIi+LUfUogMKkRacljQEJd2AG6vYzvcjhQFkqoZmw==",
+      "path": "system.interactive.async/3.1.1",
+      "hashPath": "system.interactive.async.3.1.1.nupkg.sha512"
+    },
     "System.IO.Compression/4.3.0": {
       "type": "package",
       "serviceable": true,
@@ -3876,6 +4249,13 @@
       "path": "system.linq.expressions/4.3.0",
       "hashPath": "system.linq.expressions.4.3.0.nupkg.sha512"
     },
+    "System.Linq.Queryable/4.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Yn/WfYe9RoRfmSLvUt2JerP0BTGGykCZkQPgojaxgzF2N0oPo+/AhB8TXOpdCcNlrG3VRtsamtK2uzsp3cqRVw==",
+      "path": "system.linq.queryable/4.0.1",
+      "hashPath": "system.linq.queryable.4.0.1.nupkg.sha512"
+    },
     "System.Numerics.Vectors/4.4.0": {
       "type": "package",
       "serviceable": true,
@@ -3883,12 +4263,26 @@
       "path": "system.numerics.vectors/4.4.0",
       "hashPath": "system.numerics.vectors.4.4.0.nupkg.sha512"
     },
+    "System.ObjectModel/4.0.12": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-tAgJM1xt3ytyMoW4qn4wIqgJYm7L7TShRZG4+Q4Qsi2PCcj96pXN7nRywS9KkB3p/xDUjc2HSwP9SROyPYDYKQ==",
+      "path": "system.objectmodel/4.0.12",
+      "hashPath": "system.objectmodel.4.0.12.nupkg.sha512"
+    },
     "System.Reflection/4.3.0": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-KMiAFoW7MfJGa9nDFNcfu+FpEdiHpWgTcS2HdMpDvt9saK3y/G4GwprPyzqjFH9NTaGPQeWNHU+iDlDILj96aQ==",
       "path": "system.reflection/4.3.0",
       "hashPath": "system.reflection.4.3.0.nupkg.sha512"
+    },
+    "System.Reflection.Extensions/4.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-GYrtRsZcMuHF3sbmRHfMYpvxZoIN2bQGrYGerUiWLEkqdEUQZhH3TRSaC/oI4wO0II1RKBPlpIa1TOMxIcOOzQ==",
+      "path": "system.reflection.extensions/4.0.1",
+      "hashPath": "system.reflection.extensions.4.0.1.nupkg.sha512"
     },
     "System.Reflection.Metadata/1.5.0": {
       "type": "package",
@@ -4092,6 +4486,11 @@
       "sha512": "sha512-jw9oHHEIVW53mHY9PgrQa98Xo2IZ0ZjrpdOTmtvk+Rvg4tq7dydmxdNqUvJ5YwjDqhn75mBXWttWjiKhWP53LQ==",
       "path": "system.xml.xpath.xdocument/4.3.0",
       "hashPath": "system.xml.xpath.xdocument.4.3.0.nupkg.sha512"
+    },
+    "Student.Interfaces/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "Microsoft.CSharp.Reference/4.0.0.0": {
       "type": "referenceassembly",
@@ -4423,7 +4822,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "System.Linq.Queryable/4.0.1.0": {
+    "System.Linq.Queryable.Reference/4.0.1.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
@@ -4483,7 +4882,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "System.ObjectModel/4.0.11.0": {
+    "System.ObjectModel.Reference/4.0.11.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
@@ -4493,7 +4892,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "System.Reflection.Extensions/4.0.1.0": {
+    "System.Reflection.Extensions.Reference/4.0.1.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
